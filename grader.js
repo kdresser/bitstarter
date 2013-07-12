@@ -9,7 +9,7 @@ var HTMLFILE_DEFAULT = "index.html";
 var HTMLURL_DEFAULT = "";            
 
 var getFileSync = function(pfn) {
-  // Return empty string if file DNE.
+  // Returns empty string if file DNE.
   if (!fs.existsSync(pfn)) {  return '' };
   return fs.readFileSync(pfn);
 };
@@ -60,7 +60,7 @@ var processURL = function(url, chksfile) {
 };
 
 if (require.main == module) {
-    // Get the options, without anything fancy checking.
+    // Get the options, without fancy checking.
     program
         .option('-c, --checks <check_file>', 'Path to checks.json', String, CHECKSFILE_DEFAULT)
         .option('-f, --file   <html_file>',  'Path to index.html',  String, HTMLFILE_DEFAULT  )
